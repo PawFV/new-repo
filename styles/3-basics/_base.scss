@@ -1,0 +1,50 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(122, 122, 122);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.8rem;
+  background-color: $fa;
+  color: black;
+  font-family: $baseFont;
+  margin: 0;
+  padding: 0 30px;
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: $f1;
+    height: auto;
+  }
+}
+
+h1 {
+  font-family: $titleFont;
+  font-size: 5rem;
+}
+
+h5 {
+  font-family: $codeFont;
+  color: $codeFontColor;
+  font-size: 2rem;
+  margin: 2rem 0;
+}

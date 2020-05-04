@@ -1,0 +1,39 @@
+.Header {
+   margin: 0;
+   height: 100vh;
+   position: relative;
+   @include flexCenter();
+
+   &__title {
+      @include flexCenter(center, column);
+      width: 60%;
+      height: 50%;
+      background: no-repeat center/100% url("../../images/laptop.png");
+      text-align: center;
+      h1 {
+         margin-bottom: 0;
+      }
+   }
+   &__arrowDown {
+      position: absolute;
+      bottom: 5%;
+      color: rgba(255, 255, 255, 0.767);
+      a {
+         color: rgb(255, 255, 255);
+         .arrowDown {
+            font-size: 7rem;
+            animation: arrowDown 1s ease-in-out 0s infinite;
+         }
+         :hover {
+            transition: color 0.5s;
+            color: $hoverLinkColor;
+         }
+      }
+
+      text-align: center;
+      p {
+         margin: 0;
+         margin-top: -15px;
+      }
+   }
+}

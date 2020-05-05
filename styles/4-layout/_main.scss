@@ -1,0 +1,78 @@
+.Portfolio {
+   height: $sectionVh;
+   min-height: $sectionVh;
+   display: grid;
+   gap: 2rem;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   .grid-item {
+      position: relative;
+      align-self: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 3rem;
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:hover {
+         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+      &:hover .Portfolio__description {
+         bottom: 0;
+         height: 6rem;
+      }
+      .Portfolio__description {
+         position: absolute;
+         top: 0;
+         width: 100%;
+         height: 0rem;
+         overflow: hidden;
+         background-color: rgba(0, 0, 0, 0.678);
+         color: white;
+         @include flexCenter();
+         transition: 0.3s ease;
+         h4 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 400;
+         }
+      }
+      img {
+         width: 100%;
+         height: auto;
+      }
+      &__icons {
+         position: absolute;
+         right: 0.3rem;
+         top: 0.5rem;
+      }
+   }
+}
+
+[data-icon="vaadin:css"] {
+   color: rgb(61, 129, 219);
+}
+
+@media (max-width: 800px) {
+   .Portfolio {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      .grid-item {
+         img {
+            max-height: 350px;
+            width: 70%;
+         }
+      }
+   }
+}
+
+@media (max-width: 580px) {
+   .Portfolio {
+      .grid-item {
+         img {
+            width: 100%;
+         }
+      }
+   }
+}

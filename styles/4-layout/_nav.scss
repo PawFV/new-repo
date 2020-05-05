@@ -1,16 +1,39 @@
 .Nav {
+   display: flex;
+   justify-content: space-between;
    width: 100%;
+   height: $navBarHeight;
    position: fixed;
    top: 0;
    padding: 0;
    z-index: 10;
    background-color: black;
-   border-bottom: 1px outset rgb(121, 120, 120);
+   border-bottom: 1px outset rgb(161, 161, 161);
    box-shadow: rgba(0, 0, 0, 0.57) 0 2px 10px 0;
+
+   &__logo {
+      align-self: center;
+      display: flex;
+      margin-left: 1.5rem;
+      color: white;
+      text-decoration: none;
+      &-name {
+         align-self: center;
+         font-size: 2rem;
+         font-weight: 500;
+         margin: 0;
+         margin-right: 0.5rem;
+      }
+      &-logo {
+         font-size: 3.2rem;
+         align-self: center;
+         color: rgb(236, 97, 97);
+      }
+   }
    &__items {
-      list-style-type: none;
       display: flex;
       justify-content: flex-end;
+      list-style-type: none;
       margin: 0;
       li {
          display: inline-block;
@@ -24,10 +47,17 @@
             font-weight: bold;
             text-align: center;
             &:hover {
-               transition: background-color 0.35s ease-in-out;
+               transition: background-color 0.25s ease-out;
                background-color: grey;
             }
          }
       }
    }
+}
+
+a[href="#about"] {
+   border-left: 1px outset rgba(161, 161, 161, 0.719);
+}
+
+@media only screen and (max-width: 480px) {
 }

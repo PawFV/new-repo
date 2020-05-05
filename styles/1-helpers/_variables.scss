@@ -6,3 +6,6 @@ $maxWidthContainer: 900px;
 // Hover
 $hoverLinkColor: rgba(0, 0, 0, 0.733);
 
+// section VH
+$navBarHeight: 65px;
+$sectionVh: calc(100vh - #{$navBarHeight});

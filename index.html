@@ -6,11 +6,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./styles/style.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
       <title>Paw Dev</title>
    </head>
 
    <body>
-      <div class="background">
+      <div class="Background-Header">
          <span></span>
          <span></span>
          <span></span>
@@ -23,44 +24,97 @@
          <span></span>
          <span></span>
       </div>
+
+
+      <header class="Header" id="about">
+         <!-- NAV -->
+         <nav class="Nav">
+            <a href="#" class="Nav__logo">
+               <p class="Nav__logo-name">PawDev</p>
+               <span class="Nav__logo-logo iconify" data-inline="false" data-icon="mdi:xml"></span>
+            </a>
+
+            <ul class="Nav__items">
+               <li>
+                  <a href="#about">About</a>
+               </li>
+               <li>
+                  <a href="#portfolio">Portfolio</a>
+               </li>
+               <li>
+                  <a href="#">Contact</a>
+               </li>
+            </ul>
+         </nav>
+
+         <div class="Header__title">
+            <h1 id="description">Hi I'm Paw...</h1>
+            <h5 class="Header__description" id="description2">I'm web developer and UX/UI designer;</h5>
+         </div>
+
+         <div class="Header__arrowDown">
+            <a href="#portfolio">
+               <span class="material-icons arrowDown">keyboard_arrow_down</span>
+            </a>
+            <p>Checkout my work</p>
+         </div>
+
+      </header>
+
+      <!-- PORTFOLIO -->
       <div class="container">
+         <section class="Portfolio" id="portfolio">
 
-         <header class="Header">
-            <nav class="Nav">
-               <ul class="Nav__items">
-                  <li>
-                     <a href="#">About</a>
-                     <div class="lineAbout"></div>
-                  </li>
-                  <li>
-                     <a href="#">Portfolio</a>
-                     <div class="linePortfolio"></div>
-                  </li>
-                  <li>
-                     <a href="#">Contact</a>
-                     <div class="lineContact"></div>
-                  </li>
-               </ul>
-            </nav>
+            <a href="#" class="grid-item grid-item1">
+               <div class="Portfolio__description">
+                  <h4>Conference Manager</h4>
+                  <div class="grid-item__icons">
+                     <span class="grid-item__icon-react iconify" data-icon="logos:react" data-inline="false"></span>
+                     <span class="iconify" data-icon="logos:sass" data-inline="false"></span>
+                  </div>
 
-            <div class="Header__title">
-               <h1 id="description"></h1>
-               <h5 class="Header__description" id="description2"></h5>
-            </div>
+               </div>
+               <img src="./images/devices/frame 4.jpg" alt="phone photo">
 
-            <div class="Header__arrowDown">
-               <a href="#">
-                  <span class="material-icons arrowDown">keyboard_arrow_down</span>
-               </a>
-               <p>Checkout my work</p>
-            </div>
+            </a>
 
-         </header>
+            <a href="#" class="grid-item grid-item2">
+               <div class="Portfolio__description">
+                  <h4>InstaCats</h4>
+                  <div class="grid-item__icons">
+                     <span class="iconify" data-icon="logos:javascript" data-inline="false"></span>
+                     <span class="iconify" data-icon="logos:sass" data-inline="false"></span>
+                  </div>
+               </div>
+               <img src="./images/devices/frame instacat.jpg" alt="phone photo">
+            </a>
+
+            <a href="#" class="grid-item grid-item3">
+               <div class="Portfolio__description">
+                  <h4>CorpClinic</h4>
+                  <div class="grid-item__icons">
+                     <span class="iconify" data-icon="logos:bootstrap" data-inline="false"></span>
+                     <span class="iconify" data-icon="vaadin:css" data-inline="false"></span>
+                  </div>
+               </div>
+               <img src="./images/devices/Frame clinic.jpg" alt="phone photo">
+            </a>
+
+            <a href="#" class="grid-item grid-item4">
+               <div class="Portfolio__description">
+                  <h4>myBlog</h4>
+                  <div class="grid-item__icons">
+                     <span class="iconify" data-icon="logos:materializecss" data-inline="false"></span>
+                     <span class="iconify" data-icon="vaadin:css" data-inline="false"></span>
+                  </div>
+               </div>
+               <img src="./images/devices/frame myBlog.jpg" alt="phone photo">
+            </a>
+
+
+         </section>
       </div>
-      <script src="script.js">
-
-
-      </script>
+      <script src="script.js"></script>
    </body>
 
 </html>

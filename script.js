@@ -1,26 +1,32 @@
-let title = document.getElementById('description');
-let description = document.getElementById('description2');
-title.innerHTML = "";
-description.innerHTML = "";
+function init() {
+   let titleOne = document.getElementById('description');
+   let titleTwo = document.getElementById('description2');
+   titleOne.innerHTML = "";
+   titleTwo.innerHTML = "";
 
-var i = 0;
-(function typeTitle() {
-   let txt = `Hi I'm Paw...`
 
-   if (i < txt.length) {
-      title.innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeTitle, 120);
-   } else typeDescription();
-})()
+   let titleOneIndex = 0;
+   (function typeTitle() {
+      let titleOneText = `Hi I'm Paw...`
 
-var j = 0;
-function typeDescription() {
+      if (titleOneIndex < titleOneText.length) {
+         titleOne.innerHTML += titleOneText.charAt(titleOneIndex);
+         titleOneIndex++;
+         setTimeout(typeTitle, 120);
+      } else typeDescription();
+   })()
 
-   let descr = `I'm web developer and UX/UI designer;`;
-   if (j < descr.length) {
-      description.innerHTML += descr.charAt(j);
-      j++;
-      setTimeout(typeDescription, 85);
+   let titleTwoIndex = 0;
+   function typeDescription() {
+
+      let titleTwoText = `I'm web developer and UX/UI designer;`;
+
+      if (titleTwoIndex < titleTwoText.length) {
+         titleTwo.innerHTML += titleTwoText.charAt(titleTwoIndex);
+         titleTwoIndex++;
+         setTimeout(typeDescription, 85);
+      }
    }
 }
+
+window.addEventListener('load', init)

@@ -1,9 +1,16 @@
+
 function init() {
+   "use strict"
    let titleOne = document.getElementById('description');
    let titleTwo = document.getElementById('description2');
    titleOne.innerHTML = "";
    titleTwo.innerHTML = "";
 
+   // Plays audio onload.
+   (() => {
+      let keyboardAudio = document.getElementById('keyboardAudio');
+      keyboardAudio.play();
+   })()
 
    let titleOneIndex = 0;
    (function typeTitle() {
@@ -17,6 +24,7 @@ function init() {
    })()
 
    let titleTwoIndex = 0;
+
    function typeDescription() {
 
       let titleTwoText = `I'm web developer and UX/UI designer;`;

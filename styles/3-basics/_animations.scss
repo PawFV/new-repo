@@ -148,3 +148,26 @@
    transform-origin: 5vw -4vh;
    box-shadow: -2vmin 0 0.953077829326993vmin currentColor;
 }
+
+@keyframes slideDown {
+   0% {
+      transform: translateY(-900px);
+   }
+   100% {
+      transform: translateY(0px);
+   }
+}
+@keyframes slideOut {
+   0% {
+      transform: translateY(0px);
+   }
+   100% {
+      transform: translateY(-900px);
+   }
+}
+.contact-slideDown {
+   animation: slideDown 0.3s 1 0s ease-out forwards;
+}
+.contact-slideOut {
+   animation: slideOut 0.3s 1 0s ease-out forwards;
+}

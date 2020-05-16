@@ -42,7 +42,7 @@
                   <a href="#portfolio">Portfolio</a>
                </li>
                <li>
-                  <a href="#">Contact</a>
+                  <a href="#" id="contact">Contact</a>
                </li>
             </ul>
          </nav>
@@ -113,9 +113,64 @@
 
 
          </section>
+
+         <div class="Contactform-container" id="formContainer">
+
+
+            <form class="Contactform" action="" id="form">
+
+               <h3 class="Contactform__title">CONTACT</h3>
+
+               <span class="iconify Contactform__close" data-icon="eva:close-fill" data-inline="false" id="closeForm"
+                  onclick="handleModal()"></span>
+
+               <div class="Contactform__left-field field">
+
+                  <label for="name" class="">NAME</label>
+                  <input type="text" class="input" name="name" id="name">
+
+               </div>
+
+               <div class="Contactform__right-field field">
+
+                  <label for="email">EMAIL</label>
+                  <input type="text" class="input" id="email">
+
+               </div>
+
+               <div class="Contactform__text-area field">
+                  <label for="message">MESSAGE</label>
+                  <textarea class="form-control" id="message" rows=8> </textarea>
+               </div>
+
+               <div class="Contactform__submit">
+                  <input type="submit" value="SEND MESSAGE" class="Contactform__submit-submit"></input>
+                  <input type="reset" value="RESET" class="Contactform__submit-reset"></input>
+               </div>
+
+               <div class="Contactform__icons">
+                  <a href="">
+                     <span class="iconify Contactform__icons-icons" data-icon="bytesize:github"
+                        data-inline="false"></span>
+                  </a>
+
+                  <a href="">
+                     <span class="iconify Contactform__icons-icons" data-icon="entypo-social:linkedin-with-circle"
+                        data-inline="false"></span>
+                  </a>
+
+                  <a href="">
+                     <span class="iconify Contactform__icons-icons" data-icon="ic:outline-alternate-email"
+                        data-inline="false"></span>
+                  </a>
+               </div>
+            </form>
+         </div>
+
       </div>
       <audio src="./audio/fast type keyboard.mp3" type="audio/mpeg" id="keyboardAudio"></audio>
       <script src="script.js"></script>
+      <script src="modal.js"></script>
    </body>
 
 </html>

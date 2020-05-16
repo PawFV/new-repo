@@ -34,10 +34,11 @@ body {
   font-family: $baseFont;
   margin: 0;
   padding: 0 30px;
+  background-color: $f1;
   .container {
     max-width: 1200px;
     margin: auto;
-
+    background-color: $f1;
     height: auto;
   }
 }

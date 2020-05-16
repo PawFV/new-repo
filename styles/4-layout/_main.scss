@@ -2,14 +2,14 @@
    height: $sectionVh;
    min-height: $sectionVh;
    display: grid;
-   gap: 2rem;
+   gap: 3rem;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 1fr 1fr;
    .grid-item {
+      margin: 30px 0;
       position: relative;
       align-self: center;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      border-radius: 3rem;
       transition: 0.3s;
       display: flex;
       flex-direction: column;
@@ -17,6 +17,7 @@
 
       &:hover {
          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+         transform: scale(1.015);
       }
       &:hover .Portfolio__description {
          bottom: 0;
@@ -59,9 +60,11 @@
       grid-template-columns: 1fr;
       grid-template-rows: auto;
       .grid-item {
+         max-width: 580px;
+         justify-self: center;
+
          img {
             max-height: 350px;
-            width: 70%;
          }
       }
    }
@@ -69,9 +72,20 @@
 
 @media (max-width: 580px) {
    .Portfolio {
+      gap: 0rem;
       .grid-item {
+         font-size: 1.2rem;
+         &:hover .Portfolio__description {
+            bottom: 0;
+            height: 4.5rem;
+         }
          img {
             width: 100%;
+         }
+         .Portfolio__description {
+            h4 {
+               font-size: 2rem;
+            }
          }
       }
    }

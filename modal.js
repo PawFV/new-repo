@@ -3,8 +3,6 @@ const form = document.getElementById('form');
 const closeForm = document.getElementById('closeForm');
 const formContainer = document.getElementById('formContainer');
 
-
-
 contact.addEventListener('click', e => {
    e.preventDefault()
    handleModal();
@@ -25,3 +23,28 @@ function handleModal() {
    }
 }
 
+(function slideMenu() {
+   const nav = document.getElementById('nav');
+   const burger = document.getElementById('burger');
+
+
+   burger.addEventListener('click', handleBurgerMenu(initialHeight, finalHeight))
+
+   let initialHeight = '65px', finalHeight = '300px';
+
+})()
+
+function handleBurgerMenu(initialHeight, finalHeight) {
+   nav.animate([
+      // keyframes
+      { height: initialHeight },
+      { height: finalHeight }
+   ], {
+      // timing options
+      duration: 1000,
+      iterations: 1,
+      easing: 'ease-in-out',
+      fill: 'forwards'
+   });
+   [initialHeight, finalHeight] = [finalHeight, initialHeight]
+}

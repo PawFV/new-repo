@@ -1,4 +1,3 @@
-
 function init() {
    "use strict"
    let titleOne = document.getElementById('description');
@@ -27,7 +26,7 @@ function init() {
 
    function typeDescription() {
 
-      let titleTwoText = `I'm web developer and UX/UI designer;`;
+      let titleTwoText = `I'm fullstack web developer;`;
 
       if (titleTwoIndex < titleTwoText.length) {
          titleTwo.innerHTML += titleTwoText.charAt(titleTwoIndex);

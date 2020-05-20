@@ -7,6 +7,7 @@
       <link rel="stylesheet" href="./styles/style.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
       <title>Paw Dev</title>
    </head>
 
@@ -28,28 +29,38 @@
 
       <header class="Header" id="about">
          <!-- NAV -->
-         <nav class="Nav">
+         <nav class="Nav" id="nav">
             <a href="#" class="Nav__logo">
                <p class="Nav__logo-name">PawDev</p>
                <span class="Nav__logo-logo iconify" data-inline="false" data-icon="mdi:xml"></span>
             </a>
 
             <ul class="Nav__items">
+
                <li>
-                  <a href="#about">About</a>
+                  <a href="#about" class="active" data-active>About</a>
                </li>
                <li>
-                  <a href="#portfolio">Portfolio</a>
+                  <a href="#portfolio" data-active>Portfolio</a>
                </li>
                <li>
-                  <a href="#" id="contact">Contact</a>
+                  <a href="#" id="contact" data-active>Contact</a>
+               </li>
+               <li>
+                  <a class="fas fa-bars burger" id="burger"></a>
                </li>
             </ul>
          </nav>
 
          <div class="Header__title">
-            <h1 id="description">Hi I'm Paw...</h1>
-            <h5 class="Header__description" id="description2">I'm web developer and UX/UI designer;</h5>
+
+            <h1 id="description"> Hi I'm Paw...</h1>
+            <h5 class="Header__description" id="description2">I'm fullstack web developer;</h5>
+            <picture class="Header__title-img">
+               <source media="(max-width: 480px)" srcset="./images/phone.png">
+
+               <img src="./images/laptop.png" alt="">
+            </picture>
          </div>
 
          <div class="Header__arrowDown">
@@ -65,7 +76,7 @@
       <div class="container">
          <section class="Portfolio" id="portfolio">
 
-            <a href="#" class="grid-item grid-item1">
+            <a href="https://health-conf.web.app/badges" target="_blank" class="grid-item grid-item1">
                <div class="Portfolio__description">
                   <h4>Conference Manager</h4>
                   <div class="grid-item__icons">
@@ -171,6 +182,7 @@
       <audio src="./audio/fast type keyboard.mp3" type="audio/mpeg" id="keyboardAudio"></audio>
       <script src="script.js"></script>
       <script src="modal.js"></script>
+      <script src="active.js"></script>
    </body>
 
 </html>

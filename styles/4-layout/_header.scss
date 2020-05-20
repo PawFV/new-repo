@@ -5,16 +5,30 @@
    width: 100%;
    position: relative;
    @include flexCenter();
-
    &__title {
+      position: relative;
       @include flexCenter(center, column);
-      width: 60%;
-      height: 60%;
-      background: no-repeat center/800px 500px url("../../images/laptop.png");
+      width: 50%;
       background-size: contain;
       text-align: center;
-      h1 {
+      user-select: none;
+      &-img {
+         position: absolute;
+         max-width: 900px;
+
+         width: 100%;
+         max-height: 550px;
+         img {
+            width: 100%;
+            height: auto;
+         }
+      }
+
+      h1,
+      h5 {
          margin-bottom: 0;
+         position: relative;
+         z-index: 2;
       }
    }
    &__arrowDown {
@@ -72,5 +86,29 @@
    }
    .Header__description {
       font-size: 0.8em;
+   }
+}
+
+@media (max-width: 480px) {
+   .Header__title {
+      min-width: 320px;
+      max-width: 350px;
+      height: 80%;
+      &-img {
+         height: 100%;
+         top: 30px;
+         width: 100%;
+         img {
+            height: 100%;
+            width: 100%;
+         }
+      }
+   }
+   .Header__arrowDown {
+      text-shadow: 0px 0px 13px black;
+      p {
+         color: rgba(255, 255, 255, 0.829);
+         text-shadow: 0px 0px 13px black;
+      }
    }
 }

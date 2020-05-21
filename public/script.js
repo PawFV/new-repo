@@ -175,13 +175,40 @@ function init() {
 
 window.addEventListener('load', init);
 
+const submit = document.getElementById('submitButton')
+
+submit.addEventListener('click', e => {
+   e.preventDefault()
+   fetchMail()
+});
 
 
-(function fetchMail() {
+async function fetchMail() {
+   const message = document.getElementById('message')
+   const name = document.getElementById('name')
+   const email = document.getElementById('email')
+   const url = 'https://portfolio-nodemailer.herokuapp.com/';
+   const url2 = 'http://localhost:3500/'
+   const bodyMsg = {
+      name: name.value,
+      email: email.value,
+      message: message.value
+   }
+   if (!name.value || !email.value || !message.value) return console.log('no')
+   try {
+      const data = await fetch(url, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(bodyMsg)
+      })
+      const dataJSON = data.json()
+      console.log(data)
+      console.log(dataJSON)
+   } catch (error) {
+      console.log(error)
+   }
+}
 
-   const form = document.getElementById('form')
-   const submit = document.getElementById('submitButton')
-
-   console.log(form, submit)
-})()
 // I love vanilla JS, I mean, I ABSOLUTELY LOVE JS!!!

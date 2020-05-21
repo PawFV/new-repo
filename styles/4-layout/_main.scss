@@ -1,8 +1,9 @@
 .Portfolio {
-   height: $sectionVh;
-   min-height: $sectionVh;
+   position: relative;
+   height: 100vh;
    display: grid;
    gap: 3rem;
+   padding: 0 20px;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 1fr 1fr;
    .grid-item {

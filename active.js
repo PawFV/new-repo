@@ -18,8 +18,9 @@
          handleLinks(element);
       })
    });
+
    // CLOSE FORM AND STYLES LAST NAV ELEMENT
-   closeForm.addEventListener('click', e => handleLinks(lastActiveElement))
+   closeForm.addEventListener('click', handleLinks(lastActiveElement))
 
    function handleLinks(element) {
       activeLinks.forEach(i => i.classList.remove('active'));

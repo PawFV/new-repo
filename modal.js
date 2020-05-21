@@ -23,28 +23,38 @@ function handleModal() {
    }
 }
 
+// SLIDE MENU
 (function slideMenu() {
    const nav = document.getElementById('nav');
    const burger = document.getElementById('burger');
+   const navItems = document.querySelectorAll('[data-active]');
 
+   // SLIDE BURGER EVENT 
+   burger.addEventListener('click', handleBurgerMenu);
 
-   burger.addEventListener('click', handleBurgerMenu(initialHeight, finalHeight))
+   navItems.forEach(nav => nav.addEventListener('click', e => {
+      if (document.documentElement.clientWidth <= 520) handleBurgerMenu();
+   }));
 
-   let initialHeight = '65px', finalHeight = '300px';
+   let initialHeight = '65px', finalHeight = '230px';
+
+   function handleBurgerMenu() {
+
+      nav.animate([
+         { height: initialHeight },
+         { height: finalHeight }
+      ], {
+         duration: 500,
+         iterations: 1,
+         easing: 'ease-in-out',
+         fill: 'forwards'
+      });
+
+      // Switch values
+      [initialHeight, finalHeight] = [finalHeight, initialHeight]
+   }
+
 
 })()
 
-function handleBurgerMenu(initialHeight, finalHeight) {
-   nav.animate([
-      // keyframes
-      { height: initialHeight },
-      { height: finalHeight }
-   ], {
-      // timing options
-      duration: 1000,
-      iterations: 1,
-      easing: 'ease-in-out',
-      fill: 'forwards'
-   });
-   [initialHeight, finalHeight] = [finalHeight, initialHeight]
-}
+

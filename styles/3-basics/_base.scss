@@ -26,20 +26,24 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  height: auto;
+  height: 100%;
 }
 
 body {
+  position: relative;
+  height: auto;
   font-size: 1.8rem;
   color: black;
   font-family: $baseFont;
   margin: 0;
-  padding: 0 30px;
   background-color: $fa;
   .container {
+    position: relative;
     max-width: 1200px;
     margin: auto;
     background-color: $fa;
-    height: auto;
+    min-height: 100vh;
   }
 }
 

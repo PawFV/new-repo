@@ -1,0 +1,30 @@
+.Footer {
+   visibility: visible;
+   justify-content: center;
+
+   position: absolute;
+   left: 0px;
+   bottom: 0px;
+   height: 30px;
+   width: 100%;
+   background: #161414dc;
+   border-top: 1px outset #d9d1cf;
+   color: white;
+   padding: 2rem 0;
+   &__text {
+      text-align: center;
+      display: flex;
+      margin-left: 1.5rem;
+      color: white;
+      text-decoration: none;
+      p {
+         color: white;
+         user-select: none;
+         align-self: center;
+         font-size: 1.7rem;
+         font-weight: 500;
+         margin: 0;
+         margin-right: 0.5rem;
+      }
+   }
+}

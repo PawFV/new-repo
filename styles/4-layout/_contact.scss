@@ -2,30 +2,31 @@
    visibility: hidden;
    position: fixed;
    background: rgba(0, 0, 0, 0.623);
-   z-index: 2;
+   z-index: 100;
    top: 0;
    left: 0;
    width: 100%;
    height: 100%;
    @include flexCenter();
 }
+
 .Contactform {
    position: fixed;
    transform: translateY(-2000px);
    z-index: 10000000 !important;
    display: grid;
    grid-template-columns: 1fr 1fr;
-   grid-template-rows: 100px 90px 200px 60px 80px;
+   grid-template-rows: 100px 90px 1.5fr 0.5fr 0.5fr;
    gap: 0 2rem;
    padding: 3rem;
    padding-bottom: 1rem;
    color: white;
-   background-color: rgba(199, 109, 74, 0.959);
-   box-shadow: rgb(199, 109, 74) 0 0 0 1px inset;
+   margin: 20px;
+   background-color: #747d90;
+   box-shadow: rgb(26, 34, 39) 0 0 4px 2px inset;
    border-radius: 0.4rem;
-   min-width: 650px;
-   max-height: 660px;
-
+   max-width: 650px;
+   height: 550px;
    &__title {
       grid-column: 1 / -1;
       align-self: center;
@@ -67,7 +68,7 @@
    }
    &__submit {
       grid-column: 1/ -1;
-      align-self: center;
+      // align-self: center;
    }
 
    .field {
@@ -94,7 +95,7 @@
 
          &:focus {
             transition: ease-in-out 0.1s;
-            background-color: rgba(167, 88, 57, 0.959);
+            background-color: rgb(91, 99, 116);
             border: 1.5px solid #fff;
          }
       }
@@ -113,7 +114,7 @@
          margin-top: 1rem;
          &:focus {
             transition: ease-in-out 0.1s;
-            background-color: rgba(167, 88, 57, 0.959);
+            background-color: rgb(91, 99, 116);
             border: 1.5px solid #fff;
          }
       }
@@ -168,6 +169,50 @@
       }
       a {
          text-decoration: none;
+      }
+   }
+}
+
+@media only screen and (max-width: 520px) {
+   .Contactform {
+      max-height: 500px;
+      width: 95%;
+      margin: 0;
+      font-size: 0.9em;
+      padding: 1.5rem 1.5rem 0.5rem;
+      grid-template-rows: 0.5fr 1fr 1fr 1fr 0.8fr 0.6fr;
+      overflow: auto;
+      &__title {
+         align-self: start;
+      }
+      &__left-field {
+         grid-column: 1/-1;
+      }
+      &__right-field {
+         grid-column: 1/-1;
+      }
+      &__icons {
+         justify-self: center;
+         align-self: start;
+      }
+      &__submit {
+         grid-column: 1/-1;
+         &-reset {
+            display: none;
+         }
+         &-submit {
+            width: 100%;
+         }
+      }
+      .field {
+         label {
+            font-size: 1.2rem;
+         }
+         input[type="text"] {
+            font-size: 1.2rem;
+            line-height: 0.3rem;
+            padding: 0.5rem;
+         }
       }
    }
 }

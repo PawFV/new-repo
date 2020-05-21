@@ -171,27 +171,3 @@
 .contact-slideOut {
    animation: slideOut 0.3s 1 0s ease-out forwards;
 }
-
-@keyframes menuSlideIn {
-   0% {
-      height: $navBarHeight;
-   }
-   100% {
-      height: 300px;
-   }
-}
-@keyframes menuSlideOut {
-   0% {
-      height: 300px;
-   }
-   100% {
-      height: $navBarHeight;
-   }
-}
-
-.menuSlideIn {
-   animation: menuSlideIn 1s 1 0s ease-in-out forwards;
-}
-.menuSlideOut {
-   animation: menuSlideIn 1s 1 0s ease-in-out;
-}

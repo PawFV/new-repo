@@ -187,7 +187,7 @@ async function fetchMail() {
    const message = document.getElementById('message')
    const name = document.getElementById('name')
    const email = document.getElementById('email')
-   const url = 'https://portfolio-nodemailer.herokuapp.com/';
+   const url = 'https://portfolio-nodemailer.herokuapp.com/mailer';
    const url2 = 'http://localhost:3500/'
    const bodyMsg = {
       name: name.value,
@@ -203,7 +203,7 @@ async function fetchMail() {
          },
          body: JSON.stringify(bodyMsg)
       })
-      const dataJSON = data.json()
+      const dataJSON = await data.json()
       console.log(data)
       console.log(dataJSON)
    } catch (error) {

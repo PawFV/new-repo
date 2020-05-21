@@ -46,7 +46,7 @@
                   <a href="#portfolio" data-active>Portfolio</a>
                </li>
                <li>
-                  <a href="#" id="contact" data-active>Contact</a>
+                  <a id="contact" href="javascript:;" data-active>Contact</a>
                </li>
 
             </ul>
@@ -124,14 +124,7 @@
 
 
          </section>
-         <footer class="Footer">
-            <div class="Footer__text">
 
-
-               <p class="">PawDev</p>
-               <span class="Nav__logo-logo iconify" data-inline="false" data-icon="mdi:xml"></span>
-            </div>
-         </footer>
 
 
          <div class="Contactform-container" id="formContainer">
@@ -139,8 +132,8 @@
 
                <h3 class="Contactform__title">CONTACT</h3>
 
-               <span class="iconify Contactform__close" data-icon="eva:close-fill" data-inline="false" id="closeForm"
-                  onclick="handleModal()"></span>
+               <span class="iconify Contactform__close" data-icon="eva:close-fill" data-inline="false"
+                  id="closeForm"></span>
 
                <div class="Contactform__left-field field">
 
@@ -158,7 +151,7 @@
 
                <div class="Contactform__text-area field">
                   <label for="message">MESSAGE</label>
-                  <textarea class="form-control" id="message" rows=8> </textarea>
+                  <textarea class="form-control" id="message" rows=6> </textarea>
                </div>
 
                <div class="Contactform__submit">
@@ -167,17 +160,17 @@
                </div>
 
                <div class="Contactform__icons">
-                  <a href="">
+                  <a href="https://github.com/PawFV" target="_blank">
                      <span class="iconify Contactform__icons-icons" data-icon="bytesize:github"
                         data-inline="false"></span>
                   </a>
 
-                  <a href="">
+                  <a href="https://www.linkedin.com/in/pau-pregoni-juan-b479b617a/" target="_blank">
                      <span class="iconify Contactform__icons-icons" data-icon="entypo-social:linkedin-with-circle"
                         data-inline="false"></span>
                   </a>
 
-                  <a href="">
+                  <a href="mailto:paujoanpr@gmail.com">
                      <span class="iconify Contactform__icons-icons" data-icon="ic:outline-alternate-email"
                         data-inline="false"></span>
                   </a>
@@ -187,10 +180,19 @@
       </div>
 
 
-      <audio src="./audio/fast type keyboard.mp3" type="audio/mpeg" id="keyboardAudio"></audio>
+      <footer class="Footer">
+         <div class="Footer__text">
+
+
+            <p class="">PawDev</p>
+            <span class="Nav__logo-logo iconify" data-inline="false" data-icon="mdi:xml"></span>
+         </div>
+      </footer>
+
+
+      <audio src="./audio/fast type keyboard.mp3" type="audio/mpeg" id="keyboardAudio" muted></audio>
+
       <script src="script.js"></script>
-      <script src="modal.js"></script>
-      <script src="active.js"></script>
    </body>
 
 </html>

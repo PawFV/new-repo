@@ -55,7 +55,6 @@
                color: rgb(236, 97, 97);
             }
          }
-
          .active {
             color: rgb(236, 97, 97);
          }
@@ -71,11 +70,13 @@
       cursor: pointer;
    }
 }
-
-@media only screen and (max-width: 520px) {
-   &__logo {
-      display: block;
+@media only screen and (min-width: 520px) {
+   .Nav {
+      height: $navBarHeight;
+      overflow: hidden;
    }
+}
+@media only screen and (max-width: 520px) {
    .Nav {
       .burger {
          display: absolute;
@@ -94,6 +95,7 @@
                display: block;
                width: 100%;
                padding: 15px 0;
+               cursor: pointer;
             }
          }
       }

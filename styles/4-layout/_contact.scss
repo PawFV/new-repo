@@ -13,7 +13,7 @@
 .Contactform {
    position: fixed;
    transform: translateY(-2000px);
-   z-index: 10000000 !important;
+   z-index: 1000 !important;
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 100px 90px 1.5fr 0.5fr 0.5fr;
@@ -40,8 +40,10 @@
    }
    &__close {
       position: absolute;
+      display: block;
       right: 12px;
       top: 12px;
+      z-index: 99999;
       height: 5rem;
       width: 5rem;
       border-radius: 100%;
@@ -176,11 +178,11 @@
 @media only screen and (max-width: 520px) {
    .Contactform {
       max-height: 500px;
-      width: 95%;
+      width: 85%;
       margin: 0;
       font-size: 0.9em;
       padding: 1.5rem 1.5rem 0.5rem;
-      grid-template-rows: 0.5fr 1fr 1fr 1fr 0.8fr 0.6fr;
+      grid-template-rows: 0.5fr 0.8fr 0.8fr 1fr 0.6fr 0.8fr;
       overflow: auto;
       &__title {
          align-self: start;
@@ -193,7 +195,7 @@
       }
       &__icons {
          justify-self: center;
-         align-self: start;
+         align-self: center;
       }
       &__submit {
          grid-column: 1/-1;
@@ -209,9 +211,11 @@
             font-size: 1.2rem;
          }
          input[type="text"] {
+            width: 96%;
             font-size: 1.2rem;
             line-height: 0.3rem;
             padding: 0.5rem;
+            margin-top: 0.5rem;
          }
       }
    }

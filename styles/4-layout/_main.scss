@@ -1,11 +1,13 @@
 .Portfolio {
    position: relative;
-   height: 100vh;
+   min-height: 100vh;
    display: grid;
    gap: 3rem;
    padding: 0 20px;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 1fr 1fr;
+   margin-bottom: 30px;
+
    .grid-item {
       margin: 30px 0;
       position: relative;
@@ -50,6 +52,11 @@
          top: 0.5rem;
       }
    }
+   // &::after {
+   //    display: block;
+   //    content: "";
+   //    clear: both;
+   // }
 }
 
 [data-icon="vaadin:css"] {

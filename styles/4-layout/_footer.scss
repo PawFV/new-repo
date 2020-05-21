@@ -1,16 +1,12 @@
 .Footer {
-   visibility: visible;
+   margin-top: 30px;
+   display: flex;
    justify-content: center;
-
-   position: absolute;
-   left: 0px;
-   bottom: 0px;
-   height: 30px;
    width: 100%;
    background: #161414dc;
    border-top: 1px outset #d9d1cf;
    color: white;
-   padding: 2rem 0;
+   padding: 1rem 0;
    &__text {
       text-align: center;
       display: flex;

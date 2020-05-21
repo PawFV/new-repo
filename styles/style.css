@@ -502,30 +502,67 @@ h5 {
   .Header__title {
     min-width: 320px;
     max-width: 350px;
-    height: 80%;
+    max-height: 70%;
   }
   .Header__title-img {
+    position: absolute;
     height: 100%;
-    top: 30px;
     width: 100%;
   }
   .Header__title-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     height: 100%;
     width: 100%;
   }
   .Header__arrowDown {
     text-shadow: 0px 0px 13px black;
+    mix-blend-mode: difference;
   }
   .Header__arrowDown p {
-    border: 1px solid black;
     color: rgba(255, 255, 255, 0.829);
+    text-shadow: 0px 0px 13px 2px black;
+    mix-blend-mode: difference;
+  }
+}
+
+@media (max-width: 340px) {
+  .Header__title {
+    min-width: 320px;
+    max-width: 350px;
+    max-height: 70%;
+  }
+  .Header__title-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .Header__title-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+  }
+  .Header__arrowDown {
     text-shadow: 0px 0px 13px black;
+    mix-blend-mode: difference;
+  }
+  .Header__arrowDown p {
+    color: rgba(255, 255, 255, 0.829);
+    text-shadow: 0px 0px 13px 2px black;
+    mix-blend-mode: difference;
   }
 }
 
 .Portfolio {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: -ms-grid;
   display: grid;
   gap: 3rem;
@@ -534,6 +571,7 @@ h5 {
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
+  margin-bottom: 30px;
 }
 
 .Portfolio .grid-item {
@@ -652,19 +690,18 @@ h5 {
 }
 
 .Footer {
-  visibility: visible;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  height: 30px;
   width: 100%;
   background: #161414dc;
   border-top: 1px outset #d9d1cf;
   color: white;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .Footer__text {
@@ -794,10 +831,14 @@ h5 {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 520px) {
-  __logo {
-    display: block;
+@media only screen and (min-width: 520px) {
+  .Nav {
+    height: 65px;
+    overflow: hidden;
   }
+}
+
+@media only screen and (max-width: 520px) {
   .Nav .burger {
     display: absolute;
     right: 30px;
@@ -820,6 +861,7 @@ h5 {
     display: block;
     width: 100%;
     padding: 15px 0;
+    cursor: pointer;
   }
 }
 
@@ -851,7 +893,7 @@ h5 {
   position: fixed;
   -webkit-transform: translateY(-2000px);
           transform: translateY(-2000px);
-  z-index: 10000000 !important;
+  z-index: 1000 !important;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -891,8 +933,10 @@ h5 {
 
 .Contactform__close {
   position: absolute;
+  display: block;
   right: 12px;
   top: 12px;
+  z-index: 99999;
   height: 5rem;
   width: 5rem;
   border-radius: 100%;
@@ -1050,12 +1094,12 @@ h5 {
 @media only screen and (max-width: 520px) {
   .Contactform {
     max-height: 500px;
-    width: 95%;
+    width: 85%;
     margin: 0;
     font-size: 0.9em;
     padding: 1.5rem 1.5rem 0.5rem;
-    -ms-grid-rows: 0.5fr 1fr 1fr 1fr 0.8fr 0.6fr;
-        grid-template-rows: 0.5fr 1fr 1fr 1fr 0.8fr 0.6fr;
+    -ms-grid-rows: 0.5fr 0.8fr 0.8fr 1fr 0.6fr 0.8fr;
+        grid-template-rows: 0.5fr 0.8fr 0.8fr 1fr 0.6fr 0.8fr;
     overflow: auto;
   }
   .Contactform__title {
@@ -1072,9 +1116,9 @@ h5 {
   .Contactform__icons {
     -ms-grid-column-align: center;
         justify-self: center;
-    -ms-flex-item-align: start;
-        -ms-grid-row-align: start;
-        align-self: start;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
   }
   .Contactform__submit {
     grid-column: 1/-1;
@@ -1089,9 +1133,11 @@ h5 {
     font-size: 1.2rem;
   }
   .Contactform .field input[type="text"] {
+    width: 96%;
     font-size: 1.2rem;
     line-height: 0.3rem;
     padding: 0.5rem;
+    margin-top: 0.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -32,7 +32,7 @@ function init() {
    })();
 
    // MODAL HANDLER 
-   (Modal = () => {
+   const Modal = (() => {
       const contact = document.getElementById('contact');
       const form = document.getElementById('form');
       const closeForm = document.getElementById('closeForm');
@@ -54,6 +54,21 @@ function init() {
             formContainer.style.visibility = "visible";
          }
          activeLink.handleLinks(activeLink.lastActiveElement());
+      }
+
+      return {
+         handleModal: () => {
+            if (setModal) {
+               setModal = false;
+               form.classList.remove('contact-slideDown');
+               formContainer.style.visibility = "hidden";
+            } else {
+               setModal = true;
+               form.classList.add('contact-slideDown');
+               formContainer.style.visibility = "visible";
+            }
+            activeLink.handleLinks(activeLink.lastActiveElement());
+         }
       }
    })();
 
@@ -171,17 +186,55 @@ function init() {
       }
 
    })();
+
+   (() => {
+      const submit = document.getElementById('submitButton')
+
+      submit.addEventListener('click', e => {
+         e.preventDefault()
+         fetchMail()
+      });
+   }
+   )()
+
+
+   async function fetchMail() {
+      const message = document.getElementById('message')
+      const name = document.getElementById('name')
+      const email = document.getElementById('email')
+      const url = 'https://portfolio-nodemailer.herokuapp.com/mailer';
+      const bodyMsg = {
+         name: name.value,
+         email: email.value,
+         message: message.value
+      }
+      if (!name.value || !email.value || !message.value) return console.log('no')
+      try {
+         const data = await fetch(url, {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(bodyMsg)
+         })
+         const dataJSON = await data.json()
+         Modal.handleModal();
+         if (!data.ok) return swal('Sorry', "There was an error, try it later.", "error");
+
+         swal(dataJSON.message, "", "success");
+
+      } catch (error) {
+         swal('Sorry', "There was an error, try it later.", "error");
+         Modal.handleModal();
+      }
+   }
 }
 
 window.addEventListener('load', init);
 
 
 
-(function fetchMail() {
 
-   const form = document.getElementById('form')
-   const submit = document.getElementById('submitButton')
 
-   console.log(form, submit)
-})()
+
 // I love vanilla JS, I mean, I ABSOLUTELY LOVE JS!!!

@@ -4,7 +4,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="./styles.css">
+      <link rel="stylesheet" href="./styles/style.min.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
@@ -26,32 +26,32 @@
          <span></span>
          <span></span>
       </div>
+      <!-- NAV -->
+      <nav class="Nav" id="nav">
+         <a href="#" class="Nav__logo">
+            <p class="Nav__logo-name">PawDev</p>
+            <span class="Nav__logo-logo iconify" data-inline="false" data-icon="mdi:xml"></span>
+         </a>
+         <span href="" id="burger">
+            <i class="fas fa-bars burger"></i>
+         </span>
+         <ul class="Nav__items">
 
+            <li>
+               <a href="#about" class="active" data-active>About</a>
+            </li>
+            <li>
+               <a href="#portflio" data-active>Portfolio</a>
+            </li>
+            <li>
+               <a id="contact" href="javascript:;" data-active>Contact</a>
+            </li>
+
+         </ul>
+      </nav>
 
       <header class="Header" id="about">
-         <!-- NAV -->
-         <nav class="Nav" id="nav">
-            <a href="#" class="Nav__logo">
-               <p class="Nav__logo-name">PawDev</p>
-               <span class="Nav__logo-logo iconify" data-inline="false" data-icon="mdi:xml"></span>
-            </a>
-            <span href="" id="burger">
-               <i class="fas fa-bars burger"></i>
-            </span>
-            <ul class="Nav__items">
 
-               <li>
-                  <a href="#about" class="active" data-active>About</a>
-               </li>
-               <li>
-                  <a href="#portfolio" data-active>Portfolio</a>
-               </li>
-               <li>
-                  <a id="contact" href="javascript:;" data-active>Contact</a>
-               </li>
-
-            </ul>
-         </nav>
 
          <div class="Header__title">
 
@@ -65,123 +65,185 @@
          </div>
 
          <div class="Header__arrowDown">
-            <a href="#portfolio">
+            <a href="#portflio">
                <span class="material-icons arrowDown">keyboard_arrow_down</span>
             </a>
             <p>Checkout my work</p>
          </div>
-
+         <div id="portflio"></div>
       </header>
 
       <!-- PORTFOLIO -->
-      <div class="container">
-         <section class="Portfolio" id="portfolio">
+      <div class="portfolio-bg">
+         <div class="container">
+            <h2 class="Portfolio__title">My projects</h2>
+            <div class="line"></div>
+            <section class="Portfolio" id="portfolio">
+               <!-- GRID ITEM 1 -->
+               <a href="https://health-conf.web.app/" target="_blank" class="grid-item grid-item1">
+                  <img class="grid-item__img" src="./images/devices/conf.jpg" alt="phone photo">
 
-            <a href="https://health-conf.web.app/badges" target="_blank" class="grid-item grid-item1">
-               <div class="Portfolio__description">
-                  <h4>Conference Manager</h4>
-                  <div class="grid-item__icons">
-                     <span class="grid-item__icon-react iconify" data-icon="logos:react" data-inline="false"></span>
-                     <span class="iconify" data-icon="logos:sass" data-inline="false"></span>
+                  <div class="Description">
+                     <h4 class="Description--title">Conference Manager</h4>
+
+                     <div class="Description--text">
+                        <p><b class="reddie">Backend:</b> REST API to handle the list of guests. User sessions, email
+                           registration and image uploads with NodeJS, Express. MongoDB to store data.</p>
+                        <p> <b class="reddie">Frontend:</b> React and Ant DesignUI.</p>
+
+                     </div>
+
+                     <div class="Description--icons">
+                        <span class="iconify ico-main react-logo" data-icon="logos:react" data-inline="false"></span>
+                        <div class="node-express">
+                           <span class="iconify node-logo ico-main" data-icon="logos:nodejs-icon"
+                              data-inline="false"></span>
+                           <p class="express-logo">Express</p>
+                        </div>
+                        <span class="iconify ico-main" data-icon="cib:mongodb" data-inline="false"
+                           style="color: #10AA50;"></span>
+                     </div>
+                  </div>
+               </a>
+
+               <!-- GRID ITEM 2 -->
+               <a href="https://pizzas-gourmet.herokuapp.com/" class="grid-item grid-item2">
+                  <img class="grid-item__img" src="./images/devices/pizzas-gourmet.jpg" alt="phone photo">
+
+                  <div class="Description">
+                     <h4 class="Description--title">Pizzas Gourmet e-commerce</h4>
+
+                     <div class="Description--text">
+                        <p><b class="reddie">Backend:</b> User registration and login using
+                           Passport. Online
+                           payments with stripe.
+                           Server side rendering with EJS using flash messages with NodeJS & Express. <br> Database
+                           for users with MongoDB.
+                        </p>
+                        <p>
+                           <b class="reddie">Frontend:</b> Designed beautifully with CSS SASS.
+                        </p>
+                     </div>
+                     <div class="Description--icons">
+                        <div class="node-express">
+                           <span class="iconify ico-main node-logo " data-icon="logos:nodejs-icon"
+                              data-inline="false"></span>
+                           <p class="express-logo">Express</p>
+                        </div>
+                        <span class="iconify ico-main" data-icon="cib:mongodb" data-inline="false"
+                           style="color: #10AA50;"></span>
+                        <span class="iconify ico-main" data-icon="logos:sass" data-inline="false"></span>
+                        <span class="ico-main ejs-logo"><b>&lt%- %&gt</b> </span>
+                     </div>
+                  </div>
+               </a>
+
+
+               <!-- GRID ITEM 3 -->
+               <a href="https://instacats-2d8f7.web.app/" target="_blank" class="grid-item grid-item3">
+                  <img class="grid-item__img" src="./images/devices/instacat.jpg" alt="phone photo">
+
+                  <div class="Description">
+                     <h4 class="Description--title">InstaCats</h4>
+
+                     <div class="Description--text">
+
+                        <p><b class="reddie">Pure frontend:</b>
+                           Designed a beautiful social media for cats, cloning Instagram UX/UI.</p>
+                        <p> Built with CSS GRID & SASS, interactions with vanilla JS. </p>
+                        <p> Deployed to Firebase.</p>
+                     </div>
+
+                     <div class="Description--icons">
+                        <span class="iconify ico-main" data-icon="logos:javascript" data-inline="false"></span>
+                        <span class="iconify ico-main" data-icon="logos:sass" data-inline="false"></span>
+                     </div>
+                  </div>
+               </a>
+               <!-- GRID ITEM 4 -->
+
+
+               <a href="https://corp-clinic.web.app/" class="grid-item grid-item4">
+                  <img class="grid-item__img" src="./images/devices/clinic.jpg" alt="phone photo">
+
+                  <div class="Description">
+                     <h4 class="Description--title">CorpClinic</h4>
+
+                     <div class="Description--text">
+                        <p>
+                           <b class="reddie">Frontend:</b> Designed a Professional business static front page for a
+                           Health Care
+                           services with Bootstrap & CSS.
+                        <p> Projected the mission, vision and values of the company and CSR promoting their
+                           responsibility fighting COVID-19.</p>
+
+                        </p>
+                     </div>
+
+                     <div class="Description--icons">
+                        <span class="iconify ico-main" data-icon="logos:bootstrap" data-inline="false"></span>
+                        <span class="iconify ico-main" data-icon="vaadin:css" data-inline="false"></span>
+                     </div>
+                  </div>
+               </a>
+            </section>
+
+
+
+            <div class="Contactform-container" id="formContainer">
+               <form class="Contactform" action="POST" id="form">
+
+                  <h3 class="Contactform__title">CONTACT</h3>
+
+                  <span class="iconify Contactform__close" data-icon="eva:close-fill" data-inline="false"
+                     id="closeForm"></span>
+
+                  <div class="Contactform__left-field field">
+
+                     <label for="name" class="">NAME</label>
+                     <input type="text" class="input" name="name" id="name">
+
                   </div>
 
-               </div>
-               <img src="./images/devices/conf.jpg" alt="phone photo">
+                  <div class="Contactform__right-field field">
 
-            </a>
+                     <label for="email">EMAIL</label>
+                     <input type="text" class="input" id="email">
 
-            <a href="https://instacats-2d8f7.web.app/" target="_blank" class="grid-item grid-item2">
-               <div class="Portfolio__description">
-                  <h4>InstaCats</h4>
-                  <div class="grid-item__icons">
-                     <span class="iconify" data-icon="logos:javascript" data-inline="false"></span>
-                     <span class="iconify" data-icon="logos:sass" data-inline="false"></span>
                   </div>
-               </div>
-               <img src="./images/devices/instacat.jpg" alt="phone photo">
-            </a>
 
-            <a href="#" class="grid-item grid-item3">
-               <div class="Portfolio__description">
-                  <h4>CorpClinic</h4>
-                  <div class="grid-item__icons">
-                     <span class="iconify" data-icon="logos:bootstrap" data-inline="false"></span>
-                     <span class="iconify" data-icon="vaadin:css" data-inline="false"></span>
+                  <div class="Contactform__text-area field">
+                     <label for="message">MESSAGE</label>
+                     <textarea class="form-control" id="message" rows=6> </textarea>
                   </div>
-               </div>
-               <img src="./images/devices/clinic.jpg" alt="phone photo">
-            </a>
 
-            <a href="#" class="grid-item grid-item4">
-               <div class="Portfolio__description">
-                  <h4>myBlog</h4>
-                  <div class="grid-item__icons">
-                     <span class="iconify" data-icon="logos:materializecss" data-inline="false"></span>
-                     <span class="iconify" data-icon="vaadin:css" data-inline="false"></span>
+                  <div class="Contactform__submit">
+                     <input type="submit" value="SEND MESSAGE" class="Contactform__submit-submit"
+                        id="submitButton"></input>
+                     <input type="reset" value="RESET" class="Contactform__submit-reset"></input>
                   </div>
-               </div>
-               <img src="./images/devices/myblog.jpg" alt="phone photo">
-            </a>
 
+                  <div class="Contactform__icons">
+                     <a href="https://github.com/PawFV" target="_blank">
+                        <span class="iconify Contactform__icons-icons" data-icon="bytesize:github"
+                           data-inline="false"></span>
+                     </a>
 
-         </section>
+                     <a href="https://www.linkedin.com/in/pau-pregoni-juan-b479b617a/" target="_blank">
+                        <span class="iconify Contactform__icons-icons" data-icon="entypo-social:linkedin-with-circle"
+                           data-inline="false"></span>
+                     </a>
 
-
-
-         <div class="Contactform-container" id="formContainer">
-            <form class="Contactform" action="POST" id="form">
-
-               <h3 class="Contactform__title">CONTACT</h3>
-
-               <span class="iconify Contactform__close" data-icon="eva:close-fill" data-inline="false"
-                  id="closeForm"></span>
-
-               <div class="Contactform__left-field field">
-
-                  <label for="name" class="">NAME</label>
-                  <input type="text" class="input" name="name" id="name">
-
-               </div>
-
-               <div class="Contactform__right-field field">
-
-                  <label for="email">EMAIL</label>
-                  <input type="text" class="input" id="email">
-
-               </div>
-
-               <div class="Contactform__text-area field">
-                  <label for="message">MESSAGE</label>
-                  <textarea class="form-control" id="message" rows=6> </textarea>
-               </div>
-
-               <div class="Contactform__submit">
-                  <input type="submit" value="SEND MESSAGE" class="Contactform__submit-submit"
-                     id="submitButton"></input>
-                  <input type="reset" value="RESET" class="Contactform__submit-reset"></input>
-               </div>
-
-               <div class="Contactform__icons">
-                  <a href="https://github.com/PawFV" target="_blank">
-                     <span class="iconify Contactform__icons-icons" data-icon="bytesize:github"
-                        data-inline="false"></span>
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/pau-pregoni-juan-b479b617a/" target="_blank">
-                     <span class="iconify Contactform__icons-icons" data-icon="entypo-social:linkedin-with-circle"
-                        data-inline="false"></span>
-                  </a>
-
-                  <a href="mailto:paujoanpr@gmail.com">
-                     <span class="iconify Contactform__icons-icons" data-icon="ic:outline-alternate-email"
-                        data-inline="false"></span>
-                  </a>
-               </div>
-            </form>
+                     <a href="mailto:paujoanpr@gmail.com">
+                        <span class="iconify Contactform__icons-icons" data-icon="ic:outline-alternate-email"
+                           data-inline="false"></span>
+                     </a>
+                  </div>
+               </form>
+            </div>
          </div>
+
       </div>
-
-
       <footer class="Footer">
          <div class="Footer__text">
 

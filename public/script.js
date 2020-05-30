@@ -31,15 +31,22 @@ function init() {
       }
    })();
 
+
+
    // MODAL HANDLER 
    const Modal = (() => {
+
       const contact = document.getElementById('contact');
       const form = document.getElementById('form');
       const closeForm = document.getElementById('closeForm');
       const formContainer = document.getElementById('formContainer');
 
-      contact.addEventListener('click', handleModal);
-      closeForm.addEventListener('click', handleModal);
+      setTimeout(() => {
+         contact.addEventListener('click', handleModal);
+         closeForm.addEventListener('click', handleModal);
+         console.log(closeForm)
+      }, 200);
+
 
       let setModal = false;
 
@@ -187,54 +194,72 @@ function init() {
 
    })();
 
-   (() => {
-      const submit = document.getElementById('submitButton')
+
+   // SUBMIT FORM 
+   (submitForm = () => {
+
+      // Init event
+      let submit = document.getElementById('submitButton');
+      const url = 'https://portfolio-nodemailer.herokuapp.com/mailer';
 
       submit.addEventListener('click', e => {
          e.preventDefault()
-         fetchMail()
+         handleSubmit()
       });
+
+
+      function handleSubmit() {
+         const bodyMsg = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+         }
+
+         if (!bodyMsg.name || !bodyMsg.email || !bodyMsg.message) return swal('', "You must complete all fields.", "error");
+
+         fetchMail(bodyMsg)
+      }
+
+      async function fetchMail(bodyMsg) {
+
+         handleSubmitState('wait', true);
+         try {
+            const data = await fetch(url, {
+               method: 'POST',
+               headers: {
+                  'Content-Type': 'application/json'
+               },
+               body: JSON.stringify(bodyMsg)
+            })
+            const dataJSON = await data.json()
+
+            // Handle state of response 
+            handleSubmitState('default', false);
+            Modal.handleModal();
+
+            if (!data.ok) return swal('Sorry', "There was an error, try it later.", "error");
+
+            swal(dataJSON.message, "", "success");
+
+         } catch (error) {
+            Modal.handleModal();
+            handleSubmitState('default', false);
+            swal('Sorry', "There was an error, try it later.", "error");
+         }
+      }
+
+      // Button disabled/enabled, Cursor wait/default
+      function handleSubmitState(cursorState, submitButtonState) {
+         document.body.style.cursor = cursorState;
+         submit.disabled = submitButtonState;
+         if (!submit.disabled) return submit.style.backgroundColor = '#fff'
+         submit.style.backgroundColor = 'rgb(190, 190, 190)';
+      }
    }
    )()
-
-
-   async function fetchMail() {
-      const message = document.getElementById('message')
-      const name = document.getElementById('name')
-      const email = document.getElementById('email')
-      const url = 'https://portfolio-nodemailer.herokuapp.com/mailer';
-      const bodyMsg = {
-         name: name.value,
-         email: email.value,
-         message: message.value
-      }
-      if (!name.value || !email.value || !message.value) return console.log('no')
-      try {
-         const data = await fetch(url, {
-            method: 'POST',
-            headers: {
-               'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(bodyMsg)
-         })
-         const dataJSON = await data.json()
-         Modal.handleModal();
-         if (!data.ok) return swal('Sorry', "There was an error, try it later.", "error");
-
-         swal(dataJSON.message, "", "success");
-
-      } catch (error) {
-         swal('Sorry', "There was an error, try it later.", "error");
-         Modal.handleModal();
-      }
-   }
 }
 
-window.addEventListener('load', init);
-
-
-
-
+window.addEventListener('load', e => setTimeout(init, 100));
 
 
 // I love vanilla JS, I mean, I ABSOLUTELY LOVE JS!!!

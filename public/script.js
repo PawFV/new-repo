@@ -31,7 +31,43 @@ function init() {
       }
    })();
 
+   // PORTFOLIO SECTION DROP DOWN BUTTON
+   (() => {
+      const dropDownButtons = document.querySelectorAll('.dropdown-icon');
+      const descriptionModal = document.querySelectorAll('.Description');
+      console.log(dropDownButtons[0].dataset.drop)
+      dropDownButtons.forEach(btn => btn.addEventListener('click', e => {
+         handleDropDown(btn.dataset.drop);
+      }));
 
+
+      function handleDropDown(elementId) {
+
+         descriptionModal[elementId].animate([
+            {
+               height: '0%',
+               opacity: 0
+            },
+            {
+               height: '100%',
+               opacity: 1
+            }
+         ], {
+            duration: 200,
+            iterations: 1,
+            easing: 'ease-in-out',
+            fill: 'forwards',
+            direction: descriptionModal[elementId].dataset.dir
+         });
+         descriptionModal[elementId].dataset.dir === 'normal' ?
+            descriptionModal[elementId].dataset.dir = 'reverse' :
+            descriptionModal[elementId].dataset.dir = 'normal';
+
+         // dropdown button
+         dropDownButtons[elementId].classList.toggle('transform-arrow')
+      }
+
+   })()
 
    // MODAL HANDLER 
    const Modal = (() => {
@@ -140,6 +176,8 @@ function init() {
       }
    })()
 
+
+
    // NAV LINKS 
    const activeLink = (() => {
       let activeLinks = document.querySelectorAll('[data-active]');
@@ -193,7 +231,6 @@ function init() {
       }
 
    })();
-
 
    // SUBMIT FORM 
    (submitForm = () => {

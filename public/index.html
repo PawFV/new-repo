@@ -6,9 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="./styles/style.min.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       <title>Paw Dev</title>
    </head>
 
@@ -57,12 +55,12 @@
 
             <h1 id="description"> Hi I'm Paw...</h1>
             <h5 class="Header__description" id="description2">I'm fullstack web developer;</h5>
-            <picture class="Header__title-img">
-               <source media="(max-width: 480px)" srcset="./images/phone.png">
-
-               <img src="./images/laptop.png" alt="">
-            </picture>
          </div>
+         <picture class="Header__title-img">
+            <source media="(max-width: 480px)" srcset="./images/phone.png">
+
+            <img src="./images/laptop.png" alt="">
+         </picture>
 
          <div class="Header__arrowDown">
             <a href="#portflio">
@@ -78,12 +76,17 @@
          <div class="container">
             <h2 class="Portfolio__title">My projects</h2>
             <div class="line"></div>
+
             <section class="Portfolio" id="portfolio">
                <!-- GRID ITEM 1 -->
-               <a href="https://health-conf.web.app/" target="_blank" class="grid-item grid-item1">
-                  <img class="grid-item__img" src="./images/devices/conf.jpg" alt="phone photo">
+               <div class="grid-item grid-item1">
 
-                  <div class="Description">
+                  <img class="grid-item__img" src="./images/devices/conf.jpg" alt="phone photo">
+                  <!-- DROPDOWN BUTTON -->
+                  <i class="fas fa-sort-down  dropdown-icon" data-drop="0"></i>
+
+
+                  <div class="Description" data-dir="normal" data-drop="0">
                      <h4 class="Description--title">Conference Manager</h4>
 
                      <div class="Description--text">
@@ -93,6 +96,7 @@
 
                      </div>
 
+                     <!-- ICONS -->
                      <div class="Description--icons">
                         <span class="iconify ico-main react-logo" data-icon="logos:react" data-inline="false"></span>
                         <div class="node-express">
@@ -103,22 +107,23 @@
                         <span class="iconify ico-main" data-icon="cib:mongodb" data-inline="false"
                            style="color: #10AA50;"></span>
                      </div>
+
+                     <a href="https://health-conf.web.app/" target="_blank" class="Description--button">Watch it</a>
                   </div>
-               </a>
+               </div>
 
                <!-- GRID ITEM 2 -->
-               <a href="https://pizzas-gourmet.herokuapp.com/" class="grid-item grid-item2">
+               <div class="grid-item grid-item2">
                   <img class="grid-item__img" src="./images/devices/pizzas-gourmet.jpg" alt="phone photo">
-
-                  <div class="Description">
-                     <h4 class="Description--title">Pizzas Gourmet e-commerce</h4>
+                  <i class="fas fa-sort-down  dropdown-icon" data-drop="1"></i>
+                  <div class="Description" data-dir="normal" data-drop="1">
+                     <h4 class="Description--title">Pizzas Gourmet</h4>
 
                      <div class="Description--text">
                         <p><b class="reddie">Backend:</b> User registration and login using
                            Passport. Online
                            payments with stripe.
-                           Server side rendering with EJS using flash messages with NodeJS & Express. <br> Database
-                           for users with MongoDB.
+                           Server side rendering with EJS using flash messages with NodeJS & Express.
                         </p>
                         <p>
                            <b class="reddie">Frontend:</b> Designed beautifully with CSS SASS.
@@ -135,15 +140,17 @@
                         <span class="iconify ico-main" data-icon="logos:sass" data-inline="false"></span>
                         <span class="ico-main ejs-logo"><b>&lt%- %&gt</b> </span>
                      </div>
+                     <a href="https://pizzas-gourmet.herokuapp.com/" target="_blank" class="Description--button">Watch
+                        it</a>
                   </div>
-               </a>
+               </div>
 
 
                <!-- GRID ITEM 3 -->
-               <a href="https://instacats-2d8f7.web.app/" target="_blank" class="grid-item grid-item3">
+               <div class="grid-item grid-item3">
                   <img class="grid-item__img" src="./images/devices/instacat.jpg" alt="phone photo">
-
-                  <div class="Description">
+                  <i class="fas fa-sort-down  dropdown-icon" data-drop="2"></i>
+                  <div class="Description" data-dir="normal" data-drop="2">
                      <h4 class="Description--title">InstaCats</h4>
 
                      <div class="Description--text">
@@ -151,22 +158,21 @@
                         <p><b class="reddie">Pure frontend:</b>
                            Designed a beautiful social media for cats, cloning Instagram UX/UI.</p>
                         <p> Built with CSS GRID & SASS, interactions with vanilla JS. </p>
-                        <p> Deployed to Firebase.</p>
                      </div>
 
                      <div class="Description--icons">
                         <span class="iconify ico-main" data-icon="logos:javascript" data-inline="false"></span>
                         <span class="iconify ico-main" data-icon="logos:sass" data-inline="false"></span>
                      </div>
+                     <a href="https://instacats-2d8f7.web.app/" target="_blank" class="Description--button">Watch it</a>
                   </div>
-               </a>
+               </div>
+
                <!-- GRID ITEM 4 -->
-
-
-               <a href="https://corp-clinic.web.app/" class="grid-item grid-item4">
+               <div class="grid-item grid-item4">
                   <img class="grid-item__img" src="./images/devices/clinic.jpg" alt="phone photo">
-
-                  <div class="Description">
+                  <i class="fas fa-sort-down  dropdown-icon" data-drop="3"></i>
+                  <div class="Description" data-dir="normal" data-drop="3">
                      <h4 class="Description--title">CorpClinic</h4>
 
                      <div class="Description--text">
@@ -184,8 +190,9 @@
                         <span class="iconify ico-main" data-icon="logos:bootstrap" data-inline="false"></span>
                         <span class="iconify ico-main" data-icon="vaadin:css" data-inline="false"></span>
                      </div>
+                     <a href="https://corp-clinic.web.app/" target="_blank" class="Description--button">Watch it</a>
                   </div>
-               </a>
+               </div>
             </section>
 
 
@@ -254,7 +261,9 @@
       </footer>
 
 
+      <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       <script src="script.js"></script>
    </body>
 

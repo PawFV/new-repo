@@ -45,10 +45,12 @@ function init() {
 
          descriptionModal[elementId].animate([
             {
+               top: '-20px',
                height: '0%',
                opacity: 0
             },
             {
+               top: '0px',
                height: '100%',
                opacity: 1
             }
